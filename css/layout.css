@@ -1,0 +1,1824 @@
+@charset "utf-8";
+/*------------------ based on 20/12/25 */
+/* > 1%, last 4 versions, Firefox ESR */
+/*------------------------------------ */
+
+
+/*------------------------------------- 
+ グリッドレイアウト
+-------------------------------------*/
+/* ページプロパティで「サイドナビを表示しない」に設定した場合 */
+/* promos1は非表示にはならない */
+body.col-subcol #nav-box ,
+body.col-subcol #promos2 {
+	display: none;
+}
+
+
+/*---------- デスクトップ用 ----------*/
+/*------------------------------------- 
+ 基礎設定
+ PC表示のコンテンツエリア幅を変更する場合は1000pxを全置換する事。
+ 1,000px + n * 60px以外の場合は、px以下の端数が出るので注意。
+-------------------------------------*/
+@media print, screen and (min-width: 768px) {
+	html {
+	}
+
+	body {
+		position: relative;
+		margin: auto;
+/*		max-width: 1600px; */
+/*		min-width: calc(1000px + 40px); */
+		--width-content-base: 1.00;
+		--width-content-area: 1032px;
+		--width-content-margin: 10px;
+	}
+
+
+	/*------------------------------------- 
+	 グリットレイアウト
+	-------------------------------------*/
+	#html1 {
+	}
+
+	/*-- コンテンツエリア --*/
+	#wrapper-2 {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	#nav {
+		margin: 0;
+	}
+
+	#wrapper-3 {
+		float: none;
+		clear: both;
+		margin: auto;
+		padding-top: 60px;
+	}
+
+
+	/*-- コンテンツ下エリア --*/
+	#promos3 {
+		clear: both;
+	}
+
+
+	/*-- ローカルナビエリア --*/
+	#promos1 {
+	}
+
+	#nav {
+	}
+
+	#promos2 {
+	}
+
+
+	#nav-box ,
+	#page-intro {
+		max-width: 1000px;
+		max-width: var(--width-content-area);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/*------------------------------------- 
+	 フッターエリア
+	-------------------------------------*/
+	/*-- セクションフッター --*/
+	#section-site-info {
+	}
+
+	#section-site-info-box {
+	}
+
+	/*-- フッター --*/
+	#site-info {
+	}
+
+	#site-info-box {
+		margin: auto;
+	}
+
+
+	/*------------------------------------- 
+	 ヘッダエリア
+	-------------------------------------*/
+	/*-- 画像とテキストの場合のみ --*/
+	#branding ,
+	#logo ,
+	#nav-meta {
+		display: none;
+	}
+
+	/*-- 更新日表示 --*/
+	#pub-date {
+		max-width: 1000px;
+		margin: auto;
+	}
+
+	#pub-date p {
+		text-align: right;
+	}
+
+	/*-- セクションヘッダー（総合トップ・スペシャル以外） --*/
+	#section-header {
+		margin: 30px auto 20px;
+		max-width: 1000px;
+		background: #0d8ccc;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+
+	#section-header h5 {
+	}
+
+	#section-header p {
+	}
+
+
+	/*------------------------------------- 
+	 Promos
+	-------------------------------------*/
+	#promos3 .ax_content_on_promos {
+		max-width: 1000px;
+		margin: 20px auto;
+	}
+
+
+	/*------------------------------------- 
+	 ローカルナビをサイドに配置するレイアウト
+	 ※ ワイドモードはサイドナビと共存できない為、自動的にオフ。
+	-------------------------------------*/
+/*---
+
+	body:not(.col-subcol) #nav {
+		clear: none;
+		float: left;
+		margin: 0;
+		width: 22%;
+		max-width: 220px;
+	}
+
+	body:not(.col-subcol) #nav-box {
+		margin-bottom: 40px;
+	}
+
+	body:not(.col-subcol) #wrapper-3 {
+		clear: none;
+		float: right;
+		width: 76%;
+		margin: 0;
+		padding-top: 0;
+
+		--width-content-area: 760px;
+		max-width: 760px;
+		max-width: calc( var(--width-content-area));
+	}
+---*/
+
+}
+
+
+
+/*---------- スマホ用 ----------*/
+@media screen and (max-width: 767px) {
+	html {
+	}
+
+	body {
+		--width-content-base: 0.9999999;
+		--width-content-area: 500px;
+		--width-content-margin: 6px;
+	}
+
+	/*------------------------------------- 
+	 グリットレイアウト
+	-------------------------------------*/
+	#html1 {
+	}
+
+
+	#wrapper-2 {
+	}
+
+	/*-- コンテンツエリア --*/
+	#wrapper-3 {
+		padding-top: 30px;
+		margin: auto;
+	}
+
+	#promos2 > .promos {
+		padding: 0 10px;
+	}
+
+	/* デフォルトはローカルナビ非表示 */
+	#nav-box ,
+	#promos2 {
+		display: none;
+	}
+
+/*-- 表示順を入れ替えて、ローカルナビをコンテンツエリアの下に設定 --*/
+/*--
+	#wrapper-2 {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	#wrapper-2 > * {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 auto;
+		        flex: 0 0 auto;
+	}
+
+	#nav {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 3;
+		order: 3;
+	}
+
+	#wrapper-3 {
+		-webkit-box-ordinal-group: 1;
+		-ms-flex-order: 1;
+		order: 1;
+	}
+
+	#promos3 {
+		-webkit-box-ordinal-group: 2;
+		-ms-flex-order: 2;
+		order: 2;
+	}
+
+	#nav {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	#nav > * {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 auto;
+		        flex: 0 0 auto;
+	}
+
+	#promos1 {
+		-webkit-box-ordinal-group: 2;
+		-ms-flex-order: 2;
+		order: 2;
+	}
+
+	#nav-box {
+		-webkit-box-ordinal-group: 3;
+		-ms-flex-order: 3;
+		order: 3;
+	}
+
+	#promos2 {
+		-webkit-box-ordinal-group: 1;
+		-ms-flex-order: 1;
+		order: 1;
+	}
+--*/
+
+
+	/*------------------------------------- 
+	 フッターエリア
+	-------------------------------------*/
+	/*-- セクションフッター --*/
+	#section-site-info {
+	}
+
+	#section-site-info-box {
+	}
+
+	/*-- フッター --*/
+	#site-info {
+	}
+
+	#site-info-box {
+	}
+
+	p#copyright {
+	/*	padding: 10px 0; */
+		font-size: 10px;
+	}
+
+
+
+	/*------------------------------------- 
+	 ヘッダエリア
+	-------------------------------------*/
+	/*-- 画像とテキストの場合のみ --*/
+	#branding ,
+	#logo ,
+	#nav-meta {
+		display: none;
+	}
+
+	/*-- 更新日表示 --*/
+	#pub-date {
+		margin: auto;
+	}
+
+	#pub-date p {
+		text-align: right;
+	}
+
+	/*-- セクションヘッダー（総合トップ・スペシャル以外） --*/
+	#section-header {
+		background: #555;
+		border: 1px solid #333;
+		color: #fff;
+	}
+
+	#section-header h5 {
+	}
+
+	#section-header p {
+	}
+
+
+	/*------------------------------------- 
+	 Promos
+	-------------------------------------*/
+	#promos3 .ax_content_on_promos {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+
+
+}
+
+
+
+
+
+/*------------------------------------- 
+ カラムレイアウト
+-------------------------------------*/
+[role="main"] {
+	overflow: hidden;
+	font-size: 0;
+}
+
+.multiColumn1 ,
+.multiColumn2 ,
+.multiColumn3 ,
+.multiColumn4 ,
+.multiColumn5 {
+	display: block;
+	font-size: 0;
+	margin-bottom: 0;
+	clear: both;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	text-align: center;
+}
+
+/* for MS Edge */
+@supports (-ms-ime-align:auto) {
+	body:not(.in-editor) .multiColumn1 ,
+	body:not(.in-editor) .multiColumn2 ,
+	body:not(.in-editor) .multiColumn3 ,
+	body:not(.in-editor) .multiColumn4 ,
+	body:not(.in-editor) .multiColumn5 {
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+	}
+}
+
+
+.column1 ,
+.column2 ,
+.column3 ,
+.column4 ,
+.column5 {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	font-size: 1rem;
+	letter-spacing: normal;
+	margin-bottom: 50px;
+}
+
+.column1.empty ,
+.column2.empty ,
+.column3.empty ,
+.column4.empty ,
+.column5.empty {
+	margin-bottom: 0;
+}
+
+
+/* 別エリア・別パーツ表示 */
+.reuse-main-area ,
+.reuse-component {
+	font-size: 0;
+}
+
+
+/*-- リダイレクト --*/
+.redirect {
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+
+
+
+/*---------- デスクトップ用 ----------*/
+@media print, screen and (min-width: 768px) {
+	.multiColumn1 ,
+	.multiColumn2 ,
+	.multiColumn3 ,
+	.multiColumn4 ,
+	.multiColumn5 {
+	 	clear: both;
+	}
+
+	.column1 ,
+	.column2 ,
+	.column3 ,
+	.column4 ,
+	.column5 {
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-left: var(--width-content-margin);
+		margin-right: var(--width-content-margin);
+	}
+
+	.multiColumn1 > .column1 {
+/*		width: 100%; */
+		width: calc(100% * var(--width-content-base));
+/*		max-width: 1000px; */
+		max-width: var(--width-content-area);
+	}
+
+	.multiColumn2 > .column1 ,
+	.multiColumn2 > .column2 {
+/*		width: calc((100% - 2 * 10px) / 2); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) / 2);
+/*		max-width: calc((1000px - 2 * 10px) / 2); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) / 2);
+	}
+
+	.multiColumn3 > .column1 ,
+	.multiColumn3 > .column2 ,
+	.multiColumn3 > .column3 {
+/*		width: calc((99.9999% - 4 * 10px) / 3); */
+		width: calc((100% * var(--width-content-base) - 4 * var(--width-content-margin)) / 3);
+/*		max-width: calc((1000px - 4 * 10px) / 3); */
+		max-width: calc((var(--width-content-area) - 4 * var(--width-content-margin)) / 3);
+	}
+
+	.multiColumn4 > .column1 ,
+	.multiColumn4 > .column2 ,
+	.multiColumn4 > .column3 ,
+	.multiColumn4 > .column4 {
+/*		width: calc((100% - 6 * 10px) / 4); */
+		width: calc((100% * var(--width-content-base) - 6 * var(--width-content-margin)) / 4);
+/*		max-width: calc((1000px - 6 * 10px) / 4); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) / 4);
+	}
+
+	.multiColumn5 > .column1 ,
+	.multiColumn5 > .column2 ,
+	.multiColumn5 > .column3 ,
+	.multiColumn5 > .column4 ,
+	.multiColumn5 > .column5 {
+/*		width: calc((100% - 8 * 10px) / 5); */
+		width: calc((100% * var(--width-content-base) - 8 * var(--width-content-margin)) / 5);
+/*		max-width: calc((1000px - 8 * 10px) / 5); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) / 5);
+	}
+
+	.multiColumn1 > .column1 ,
+	.multiColumn2 > .column1 ,
+	.multiColumn3 > .column1 ,
+	.multiColumn4 > .column1 ,
+	.multiColumn5 > .column1 {
+		margin-left: 0;
+	}
+	.multiColumn1 > .column1 ,
+	.multiColumn2 > .column2 ,
+	.multiColumn3 > .column3 ,
+	.multiColumn4 > .column4 ,
+	.multiColumn5 > .column5 {
+		margin-right: 0;
+	}
+
+
+	/*-- デフォルトワイド・センターワイドモード --*/
+	/* 左右にパディングを入れる */
+	[role="main"] > .multiColumn1 ,
+	[role="main"] > .multiColumn2 ,
+	[role="main"] > .multiColumn3 ,
+	[role="main"] > .multiColumn4 ,
+	[role="main"] > .multiColumn5 {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	/*-- コンテンツエリア＝マルチカラム設定 --*/
+	.lx_mcol_narrow {
+		max-width: calc(1000px);
+		max-width: calc(var(--width-content-area));
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/*-- フルワイドモード --*/
+	/* 左右のパディングをなくし、カラムを画面幅いっぱいに */
+	[role="main"] > div.lx_mcol_full {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	[role="main"] > div.lx_mcol_full > .column1 ,
+	[role="main"] > div.lx_mcol_full > .column2 ,
+	[role="main"] > div.lx_mcol_full > .column3 ,
+	[role="main"] > div.lx_mcol_full > .column4 ,
+	[role="main"] > div.lx_mcol_full > .column5 {
+		max-width: none;
+	}
+
+	[role="main"] > .redirect {
+		max-width: 1000px;
+		max-width: var(--width-content-area);
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/*---------- スマホ用 ----------*/
+@media screen and (max-width: 767px) {
+
+	/*------------------------------------- 
+	 カラムレイアウト
+	 body IDにindexを設定するとインデックスモード
+	 body IDにwideを設定するとワイドモード
+	-------------------------------------*/
+	.column1 ,
+	.column2 ,
+	.column3 ,
+	.column4 ,
+	.column5 {
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-left: var(--width-content-margin);
+		margin-right: var(--width-content-margin);
+	}
+
+	/* 1～3カラムは1カラムに */
+	.multiColumn1 > .column1 ,
+	.multiColumn2 > .column1 ,
+	.multiColumn2 > .column2 ,
+	.multiColumn3 > .column1 ,
+	.multiColumn3 > .column2 ,
+	.multiColumn3 > .column3 {
+/*		width: calc(100% - 10px); */
+		width: calc(100% * var(--width-content-base) - 2 * var(--width-content-margin));
+/*		max-width: calc(500px - 2 * 10px); */
+		max-width: calc(var(--width-content-area) - 2 * var(--width-content-margin));
+	}
+
+	/* 4～5は2カラムに */
+	.multiColumn4 > .column1 ,
+	.multiColumn4 > .column2 ,
+	.multiColumn4 > .column3 ,
+	.multiColumn4 > .column4 ,
+	.multiColumn5 > .column1 ,
+	.multiColumn5 > .column2 ,
+	.multiColumn5 > .column3 ,
+	.multiColumn5 > .column4 ,
+	.multiColumn5 > .column5 {
+/*		width: calc(50% - 10px); */
+		width: calc(100% * var(--width-content-base) / 2 - 2 * var(--width-content-margin));
+/*		max-width: calc(500px / 2 - 2 * 10px); */
+		max-width: calc(var(--width-content-area) / 2 - 2 * var(--width-content-margin));
+	}
+
+
+	/*-- デフォルトワイド・センターワイドモード --*/
+	/* 左右にパディングを入れる */
+	[role="main"] > .multiColumn1 ,
+	[role="main"] > .multiColumn2 ,
+	[role="main"] > .multiColumn3 ,
+	[role="main"] > .multiColumn4 ,
+	[role="main"] > .multiColumn5 {
+		padding-left: 0;
+		padding-right: 0;
+		padding-left: calc(15px - var(--width-content-margin));
+		padding-right: calc(15px - var(--width-content-margin));
+	}
+
+
+	/*-- コンテンツエリア＝マルチカラム設定 --*/
+	.lx_mcol_narrow {
+		max-width: calc(500px);
+		max-width: calc(var(--width-content-area));
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/*-- フルワイドモード --*/
+	/* 左右のパディングをなくし、カラムを画面幅いっぱいに */
+	[role="main"] > div.lx_mcol_full {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: calc(0px - var(--width-content-margin));
+		margin-right: calc(0px - var(--width-content-margin));
+	}
+
+	[role="main"] > div.lx_mcol_full > .column1 ,
+	[role="main"] > div.lx_mcol_full > .column2 ,
+	[role="main"] > div.lx_mcol_full > .column3 ,
+	[role="main"] > div.lx_mcol_full > .column4 ,
+	[role="main"] > div.lx_mcol_full > .column5 {
+		max-width: none;
+	}
+
+	[role="main"] > .redirect {
+		max-width: calc(500px - 2 * 10px);
+		max-width: calc(var(--width-content-area) - 2 * var(--width-content-margin));
+		padding-left: 6px;
+		padding-right: 6px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	/*-- 別エリア・別パーツ内は、カラムレイアウトをリセット --*/
+	.reuse-main-area div.column1 ,
+	.reuse-main-area div.column2 ,
+	.reuse-main-area div.column3 ,
+	.reuse-main-area div.column4 ,
+	.reuse-main-area div.column5 ,
+	.reuse-component div.column1 ,
+	.reuse-component div.column2 ,
+	.reuse-component div.column3 ,
+	.reuse-component div.column4 ,
+	.reuse-component div.column5 {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/*-- フルワイドカラムの別エリア・別パーツ内は、同様にフルワイド --*/
+.lx_mcol_full .reuse-main-area .column1 ,
+.lx_mcol_full .reuse-main-area .column2 ,
+.lx_mcol_full .reuse-main-area .column3 ,
+.lx_mcol_full .reuse-main-area .column4 ,
+.lx_mcol_full .reuse-main-area .column5 ,
+.lx_mcol_full .reuse-component .column1 ,
+.lx_mcol_full .reuse-component .column2 ,
+.lx_mcol_full .reuse-component .column3 ,
+.lx_mcol_full .reuse-component .column4 ,
+.lx_mcol_full .reuse-component .column5 {
+	max-width: none;
+}
+
+
+/*-- ユーティリティエリア --*/
+/*-- フッターエリア --*/
+[id=html1] .column1 ,
+[id=html1] .column2 ,
+[id=html1] .column3 ,
+[id=html1] .column4 ,
+[id=html1] .column5 ,
+[id=site-info] .column1 ,
+[id=site-info] .column2 ,
+[id=site-info] .column3 ,
+[id=site-info] .column4 ,
+[id=site-info] .column5 {
+	max-width: none;
+	margin-bottom: 0;
+}
+
+
+
+/*------------------------------------- 
+ 通常モード カラム バリエーション
+-------------------------------------*/
+/*===== カラムを中央寄せにする =====*/
+.lx_mcol_center {
+	text-align: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.lx_mcol_center > .empty {
+	display: none;
+}
+
+
+/*===== SP表示で強制的に1カラムに =====*/
+@media screen and (max-width: 767px) {
+	.lx_col_sp100 > .column1 ,
+	.lx_col_sp100 > .column2 ,
+	.lx_col_sp100 > .column3 ,
+	.lx_col_sp100 > .column4 ,
+	.lx_col_sp100 > .column5 ,
+	[id=index] [role="main"] > div.lx_col_sp100 {
+		width: calc(100% * var(--width-content-base) - 2 * var(--width-content-margin));
+	}
+}
+
+
+/*===== SP表示で強制的に2カラムに =====*/
+@media screen and (max-width: 767px) {
+	.lx_col_sp50 > div.column1 ,
+	.lx_col_sp50 > div.column2 ,
+	.lx_col_sp50 > div.column3 ,
+	.lx_col_sp50 > div.column4 ,
+	.lx_col_sp50 > div.column5 ,
+	[id=index] [role="main"] > div.lx_col_sp50 {
+		width: calc(100% * var(--width-content-base) / 2 - 2 * var(--width-content-margin));
+	}
+}
+
+
+/*===== カラムを逆順に並べる =====*/
+/* PC表示のみ、インデックスモード非対応 */
+/* SP表示はそのまま */
+@media print, screen and (min-width: 768px) {
+	.lx_mcol_rtl {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		    -ms-flex-direction: row-reverse;
+		        flex-direction: row-reverse;
+	}
+
+	.lx_mcol_rtl.multiColumn2 > .column1 ,
+	.lx_mcol_rtl.multiColumn3 > .column1 ,
+	.lx_mcol_rtl.multiColumn4 > .column1 ,
+	.lx_mcol_rtl.multiColumn5 > .column1 {
+		margin-left: 10px;
+		margin-left: var(--width-content-margin);
+		margin-right: 0;
+	}
+	.lx_mcol_rtl.multiColumn2 > .column2 ,
+	.lx_mcol_rtl.multiColumn3 > .column3 ,
+	.lx_mcol_rtl.multiColumn4 > .column4 ,
+	.lx_mcol_rtl.multiColumn5 > .column5 {
+		margin-left: 0;
+		margin-right: 10px;
+		margin-right: var(--width-content-margin);
+	}
+}
+
+/*===== カラムを下揃え・中央揃え =====*/
+.lx_col_valign_bottom {
+	-webkit-box-align: end;
+	    -ms-flex-align: end;
+	        align-items: flex-end;
+}
+
+.lx_col_valign_bottom > .column1 ,
+.lx_col_valign_bottom > .column2 ,
+.lx_col_valign_bottom > .column3 ,
+.lx_col_valign_bottom > .column4 ,
+.lx_col_valign_bottom > .column5 {
+	vertical-align: bottom;
+}
+
+.lx_col_valign_middle {
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.lx_col_valign_middle > .column1 ,
+.lx_col_valign_middle > .column2 ,
+.lx_col_valign_middle > .column3 ,
+.lx_col_valign_middle > .column4 ,
+.lx_col_valign_middle > .column5 {
+	vertical-align: middle;
+}
+
+
+
+
+
+/*===== カラム間余白・カラムベース幅 =====*/
+/* SPの場合は、PCに対して余白を3/5。 */
+@media print, screen and (min-width: 768px) {
+	.lx_col_mr0 {
+		--width-content-margin: 0px;
+	}
+	.lx_col_mr10 {
+		--width-content-margin: 5px;
+	}
+	.lx_col_mr20 {
+		--width-content-margin: 10px;
+	}
+	.lx_col_mr30 {
+		--width-content-margin: 15px;
+	}
+	.lx_col_mr40 {
+		--width-content-margin: 20px;
+	}
+	.lx_col_mr50 {
+		--width-content-margin: 25px;
+	}
+	.lx_col_mr60 {
+		--width-content-margin: 30px;
+	}
+	.lx_col_mr70 {
+		--width-content-margin: 35px;
+	}
+	.lx_col_mr80 {
+		--width-content-margin: 40px;
+	}
+	.lx_col_mr90 {
+		--width-content-margin: 45px;
+	}
+	.lx_col_mr100 {
+		--width-content-margin: 50px;
+	}
+
+	.lx_mcol_w95pc {
+		--width-content-base: 0.95;
+		--width-content-area: calc(1000px * 0.95);
+	}
+	.lx_mcol_w90pc {
+		--width-content-base: 0.90;
+		--width-content-area: calc(1000px * 0.9);
+	}
+	.lx_mcol_w85pc {
+		--width-content-base: 0.85;
+		--width-content-area: calc(1000px * 0.85);
+	}
+	.lx_mcol_w80pc {
+		--width-content-base: 0.80;
+		--width-content-area: calc(1000px * 0.8);
+	}
+	.lx_mcol_w75pc {
+		--width-content-base: 0.75;
+		--width-content-area: calc(1000px * 0.75);
+	}
+	.lx_mcol_w70pc {
+		--width-content-base: 0.70;
+		--width-content-area: calc(1000px * 0.7);
+	}
+	.lx_mcol_w65pc {
+		--width-content-base: 0.65;
+		--width-content-area: calc(1000px * 0.65);
+	}
+	.lx_mcol_w60pc {
+		--width-content-base: 0.60;
+		--width-content-area: calc(1000px * 0.6);
+	}
+}
+@media screen and (max-width: 767px) {
+	.lx_col_mr0 {
+		--width-content-margin: 0px;
+	}
+	.lx_col_mr10 {
+		--width-content-margin: 3px;
+	}
+	.lx_col_mr20 {
+		--width-content-margin: 6px;
+	}
+	.lx_col_mr30 {
+		--width-content-margin: 9px;
+	}
+	.lx_col_mr40 {
+		--width-content-margin: 12px;
+	}
+	.lx_col_mr50 {
+		--width-content-margin: 15px;
+	}
+	.lx_col_mr60 {
+		--width-content-margin: 18px;
+	}
+	.lx_col_mr70 {
+		--width-content-margin: 21px;
+	}
+	.lx_col_mr80 {
+		--width-content-margin: 24px;
+	}
+	.lx_col_mr90 {
+		--width-content-margin: 27px;
+	}
+	.lx_col_mr100 {
+		--width-content-margin: 30px;
+	}
+
+	.lx_mcol_w95sp {
+		--width-content-base: 0.95;
+		--width-content-area: calc(500px * 0.95);
+	}
+	.lx_mcol_w90sp {
+		--width-content-base: 0.90;
+		--width-content-area: calc(500px * 0.9);
+	}
+	.lx_mcol_w85sp {
+		--width-content-base: 0.85;
+		--width-content-area: calc(500px * 0.85);
+	}
+	.lx_mcol_w80sp {
+		--width-content-base: 0.80;
+		--width-content-area: calc(500px * 0.8);
+	}
+	.lx_mcol_w75sp {
+		--width-content-base: 0.75;
+		--width-content-area: calc(500px * 0.75);
+	}
+	.lx_mcol_w70sp {
+		--width-content-base: 0.70;
+		--width-content-area: calc(500px * 0.7);
+	}
+	.lx_mcol_w65sp {
+		--width-content-base: 0.65;
+		--width-content-area: calc(500px * 0.65);
+	}
+	.lx_mcol_w60sp {
+		--width-content-base: 0.60;
+		--width-content-area: calc(500px * 0.6);
+	}
+}
+
+
+
+/*===== カラム分割比率 =====*/
+/* PCで7:3等のカラム */
+/* SPでは特に何もせず、通常通り上下に */
+@media print, screen and (min-width: 768px) {
+	/*-- カラム分割比率 1:2・2:1 --*/
+	.lx_mcol2_ratio12.multiColumn2 > .column1 ,
+	.lx_mcol2_ratio21.multiColumn2 > .column2 {
+/*		width: calc((99.9999% - 20px * 2) / 3); */
+		width: calc((100% * var(--width-content-base) - 4 * var(--width-content-margin)) / 3);
+/*		max-width: calc((1000px - 20px * 2) / 3); */
+		max-width: calc((var(--width-content-area) - 4 * var(--width-content-margin)) / 3);
+	}
+	.lx_mcol2_ratio12.multiColumn2 > .column2 ,
+	.lx_mcol2_ratio21.multiColumn2 > .column1 {
+/*		width: calc(99.9999% - (99.9999% - 20px * 2) / 3 - 20px); */
+		width: calc((100% * var(--width-content-base) - 4 * var(--width-content-margin)) * 2 / 3 + 2 * var(--width-content-margin));
+/*		max-width: calc(1000px - (1000px - 20px * 2) / 3 - 20px); */
+		max-width: calc((var(--width-content-area) - 4 * var(--width-content-margin)) * 2 / 3 + 2 * var(--width-content-margin));
+	}
+
+
+	/*-- カラム分割比率 1:3・3:1 --*/
+	.lx_mcol2_ratio13.multiColumn2 > .column1 ,
+	.lx_mcol2_ratio31.multiColumn2 > .column2 {
+/*		width: calc((100% - 20px * 3) / 4); */
+		width: calc((100% * var(--width-content-base) - 6 * var(--width-content-margin)) / 4);
+/*		max-width: calc((1000px - 20px * 3) / 4); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) / 4);
+	}
+	.lx_mcol2_ratio13.multiColumn2 > .column2 ,
+	.lx_mcol2_ratio31.multiColumn2 > .column1 {
+/*		width: calc(100% - (100% - 20px * 3) / 4 - 20px); */
+		width: calc((100% * var(--width-content-base) - 6 * var(--width-content-margin)) * 3 / 4 + 4 * var(--width-content-margin));
+/*		max-width: calc(1000px - (1000px - 20px * 3) / 4 - 20px); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) * 3 / 4 + 4 * var(--width-content-margin));
+	}
+
+
+	/*-- カラム分割比率 2:8～8:2 --*/
+	.lx_mcol2_ratio82.multiColumn2 > .column1 ,
+	.lx_mcol2_ratio28.multiColumn2 > .column2 {
+/*		width: calc((100% - 20px * 1) * 0.8); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.8);
+/*		max-width: calc((1000px - 20px * 1) * 0.8); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.8);
+	}
+	.lx_mcol2_ratio82.multiColumn2 > .column2 ,
+	.lx_mcol2_ratio28.multiColumn2 > .column1 {
+/*		width: calc((100% - 20px * 1) * 0.2); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.2);
+/*		max-width: calc((1000px - 20px * 1) * 0.2); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.2);
+	}
+
+	.lx_mcol2_ratio73.multiColumn2 > .column1 ,
+	.lx_mcol2_ratio37.multiColumn2 > .column2 {
+/*		width: calc((100% - 20px * 1) * 0.7); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.7);
+/*		max-width: calc((1000px - 20px * 1) * 0.7); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.7);
+	}
+	.lx_mcol2_ratio73.multiColumn2 > .column2 ,
+	.lx_mcol2_ratio37.multiColumn2 > .column1 {
+/*		width: calc((100% - 20px * 1) * 0.3); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.3);
+/*		max-width: calc((1000px - 20px * 1) * 0.3); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.3);
+	}
+
+	.lx_mcol2_ratio64.multiColumn2 > .column1 ,
+	.lx_mcol2_ratio46.multiColumn2 > .column2 {
+/*		width: calc((100% - 20px * 1) * 0.6); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.6);
+/*		max-width: calc((1000px - 20px * 1) * 0.6); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.6);
+	}
+	.lx_mcol2_ratio64.multiColumn2 > .column2 ,
+	.lx_mcol2_ratio46.multiColumn2 > .column1 {
+/*		width: calc((100% - 20px * 1) * 0.4); */
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.4);
+/*		max-width: calc((1000px - 20px * 1) * 0.4); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.4);
+	}
+
+
+	/*-- カラム分割比率 1:1:2・1:2:1・2:1:1 --*/
+	.lx_mcol3_ratio112.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio112.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio121.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio121.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio211.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio211.multiColumn3 > .column3 {
+/*		width: calc((100% - 20px * 3) / 4); */
+		width: calc((100% * var(--width-content-base) - 6 * var(--width-content-margin)) / 4);
+/*		max-width: calc((1000px - 20px * 3) / 4); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) / 4);
+	}
+	.lx_mcol3_ratio112.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio121.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio211.multiColumn3 > .column1 {
+/*		width: calc((100% - 20px * 1) / 2); */
+		width: calc((100% * var(--width-content-base) - 6 * var(--width-content-margin)) * 2 / 4 + 2 * var(--width-content-margin));
+/*		max-width: calc((1000px - 20px * 1) / 2); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) * 2 / 4 + 2 * var(--width-content-margin));
+	}
+
+
+	/*-- カラム分割比率 1:2:2・2:1:2・2:2:1 --*/
+	.lx_mcol3_ratio122.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio212.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio221.multiColumn3 > .column3 {
+/*		width: calc((100% - 20px * 4) / 5); */
+		width: calc((100% * var(--width-content-base) - 8 * var(--width-content-margin)) / 5);
+/*		max-width: calc((1000px - 20px * 4) / 5); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) / 5);
+	}
+	.lx_mcol3_ratio122.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio122.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio212.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio212.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio221.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio221.multiColumn3 > .column2 {
+/*		width: calc((100% - 20px * 4) / 5 * 2 + 20px); */
+		width: calc((100% * var(--width-content-base) - 8 * var(--width-content-margin)) * 2 / 5 + 2 * var(--width-content-margin));
+/*		max-width: calc((1000px - 20px * 4) / 5 * 2 + 20px); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) * 2 / 5 + 2 * var(--width-content-margin));
+	}
+
+
+	/*-- カラム分割比率 1:1:3・1:3:1・3:1:1 --*/
+	.lx_mcol3_ratio113.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio113.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio131.multiColumn3 > .column1 ,
+	.lx_mcol3_ratio131.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio311.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio311.multiColumn3 > .column3 {
+/*		width: calc((100% - 20px * 4) / 5); */
+		width: calc((100% * var(--width-content-base) - 8 * var(--width-content-margin)) / 5);
+/*		max-width: calc((1000px - 20px * 4) / 5); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) / 5);
+	}
+	.lx_mcol3_ratio113.multiColumn3 > .column3 ,
+	.lx_mcol3_ratio131.multiColumn3 > .column2 ,
+	.lx_mcol3_ratio311.multiColumn3 > .column1 {
+/*		width: calc((100% - 20px * 4) / 5 * 3 + 20px * 2); */
+		width: calc((100% * var(--width-content-base) - 8 * var(--width-content-margin)) * 3 / 5 + 4 * var(--width-content-margin));
+/*		max-width: calc((1000px - 20px * 4) / 5 * 3 + 2 * 20px); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) * 3 / 5 + 4 * var(--width-content-margin));
+	}
+
+}
+
+
+
+
+
+
+/*------------------------------------- 
+ body IDにindexを設定するとインデックスモード
+ body IDにwideを設定するとワイドモード
+ body IDにnormalを設定するとノーマルモード
+
+ v5.6    v5.5    ～v5.4
+ 空欄    空欄    wide +カラム表示
+ wide    wide    wide
+ index   index   index
+ narrow  normal  空欄
+-------------------------------------*/
+@media print, screen and (min-width: 768px) {
+
+	/*-- コンテンツエリア --*/
+	[id=narrow] #wrapper-2 {
+		width: 100%;
+		margin-bottom: 60px;
+		--width-content-base: 1.00;
+		--width-content-area: 1000px;
+		--width-content-margin: 10px;
+	}
+
+	[id=narrow] #nav {
+		margin: 0;
+	}
+
+	[id=narrow] #wrapper-3 {
+		max-width: calc(40px + 1000px);
+		max-width: calc(40px + var(--width-content-area));
+		padding: 0 20px;
+
+		float: none;
+		clear: both;
+		margin: auto;
+		padding-top: 60px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	[id=narrow] #wrapper-3 {
+		padding: 0 12px;
+		padding-top: 30px;
+		max-width: calc(40px + 500px);
+		max-width: calc(40px + var(--width-content-area));
+		margin: auto;
+	}
+}
+
+/*---------- ワイドモード ----------*/
+/*-- 空カラム非表示 --*/
+[id=wide] [role="main"] > * > div.empty {
+	display: none;
+}
+
+@media print, screen and (min-width: 768px) {
+	[id=wide] #wrapper-2 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+		width: auto;
+		max-width: none;
+	}
+
+	[id=wide] #wrapper-3 {
+		float: none;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+		width: auto;
+		max-width: none;
+	}
+
+	/* ワイドモードはデフォルトでローカルナビ非表示 */
+	[id=wide] #nav-box ,
+	[id=wide] #promos2 {
+		display: none;
+	}
+
+	[id=wide] #page-intro {
+		max-width: var(--width-content-area);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	[id=wide] #site-info {
+		margin-top: 0;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+	[id=wide] #wrapper-2 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	[id=wide] #wrapper-3 {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	[id=wide] #site-info {
+		margin-top: 0;
+	}
+
+	/* ワイドモードはデフォルトでローカルナビ非表示 */
+	[id=wide] #nav-box ,
+	[id=wide] #promos2 {
+		display: none;
+	}
+
+}
+
+/*------------------------------------- 
+ ワイドモード特殊設定カラムレイアウト
+-------------------------------------*/
+@media print, screen and (min-width: 768px) {
+	[id=narrow] [role="main"] > div.multiColumn1 ,
+	[id=narrow] [role="main"] > div.multiColumn2 ,
+	[id=narrow] [role="main"] > div.multiColumn3 ,
+	[id=narrow] [role="main"] > div.multiColumn4 ,
+	[id=narrow] [role="main"] > div.multiColumn5 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+
+/*---------- スマホ用 ----------*/
+@media screen and (max-width: 767px) {
+	/*-- フルワイドカラム（ウインドウサイズいっぱい表示） --*/
+	[id=wide] [role="main"] > .lx_mcol_full > .column1 ,
+	[id=wide] [role="main"] > .lx_mcol_full > .column2 ,
+	[id=wide] [role="main"] > .lx_mcol_full > .column3 ,
+	[id=wide] [role="main"] > .lx_mcol_full > .column4 ,
+	[id=wide] [role="main"] > .lx_mcol_full > .column5 {
+		max-width: none;
+	}
+
+
+}
+
+
+
+
+
+
+/*---------- インデックスモード ----------*/
+[id=index] [role="main"] > .multiColumn1 ,
+[id=index] [role="main"] > .multiColumn2 ,
+[id=index] [role="main"] > .multiColumn3 ,
+[id=index] [role="main"] > .multiColumn4 ,
+[id=index] [role="main"] > .multiColumn5 {
+	clear: none;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	-webkit-box-pack: normal;
+	    -ms-flex-pack: normal;
+	        justify-content: normal;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+[id=index] [role="main"] > * > .column1 ,
+[id=index] [role="main"] > * > .column2 ,
+[id=index] [role="main"] > * > .column3 ,
+[id=index] [role="main"] > * > .column4 ,
+[id=index] [role="main"] > * > .column5 {
+	width: 100%;
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+/*-- 空カラム非表示 --*/
+[id=index] [role="main"] > .multiColumn1.empty ,
+[id=index] [role="main"] > .multiColumn2.empty ,
+[id=index] [role="main"] > .multiColumn3.empty ,
+[id=index] [role="main"] > .multiColumn4.empty ,
+[id=index] [role="main"] > .multiColumn5.empty ,
+[id=index] [role="main"] > * > .column1.empty ,
+[id=index] [role="main"] > * > .column2 ,
+[id=index] [role="main"] > * > .column3 ,
+[id=index] [role="main"] > * > .column4 ,
+[id=index] [role="main"] > * > .column5 {
+	display: none;
+}
+
+/*---------- デスクトップ用 ----------*/
+@media print, screen and (min-width: 768px) {
+	[id=index] #wrapper-3 {
+		overflow: hidden;
+
+		max-width: calc(1000px + 40px);
+		max-width: calc(var(--width-content-area) + 40px);
+		padding-left: 20px;
+		padding-right: 20px;
+
+		float: none;
+		clear: both;
+		margin: auto;
+		padding-top: 60px;
+	}
+
+	[id=index] #sharewithmain {
+		width: calc(100% + 20px);
+		margin: auto;
+	}
+
+
+	/*-- インデックスモード カラム幅 --*/
+	[id=index] [role="main"] > .multiColumn1 {
+/*		width: calc(100% - 20px); */
+		width: calc((100% - 20px) * var(--width-content-base));
+/*		max-width: 1000px; */
+		max-width: var(--width-content-area);
+	}
+
+	[id=index] [role="main"] > .multiColumn2 {
+/*		width: calc((100% - 20px - 2 * 10px) / 2); */
+		width: calc(((100% - 20px) * var(--width-content-base) - 2 * var(--width-content-margin)) / 2);
+/*		max-width: calc((1000px - 2 * 10px) / 2); */
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) / 2);
+	}
+
+	[id=index] [role="main"] > .multiColumn3 {
+/*		width: calc((99.9999% - 20px - 4 * 10px) / 3); */
+		width: calc(((99.9999% - 20px) * var(--width-content-base) - 4 * var(--width-content-margin)) / 3);
+/*		max-width: calc((999.99px - 4 * 10px) / 3); */
+		max-width: calc((var(--width-content-area) - 4 * var(--width-content-margin)) / 3);
+	}
+
+	[id=index] [role="main"] > .multiColumn4 {
+/*		width: calc((100% - 20px - 6 * 10px) / 4); */
+		width: calc(((100% - 20px) * var(--width-content-base) - 6 * var(--width-content-margin)) / 4);
+/*		max-width: calc((1000px - 6 * 10px) / 4); */
+		max-width: calc((var(--width-content-area) - 6 * var(--width-content-margin)) / 4);
+	}
+
+	[id=index] [role="main"] > .multiColumn5 {
+/*		width: calc((100% - 20px - 8 * 10px) / 5); */
+		width: calc(((100% - 20px) * var(--width-content-base) - 8 * var(--width-content-margin)) / 5);
+/*		max-width: calc((1000px - 8 * 10px) / 5); */
+		max-width: calc((var(--width-content-area) - 8 * var(--width-content-margin)) / 5);
+	}
+
+	[id=index] [role="main"] > .multiColumn1 ,
+	[id=index] [role="main"] > .multiColumn2 ,
+	[id=index] [role="main"] > .multiColumn3 ,
+	[id=index] [role="main"] > .multiColumn4 ,
+	[id=index] [role="main"] > .multiColumn5 {
+/*		margin-right: 20px; */
+		margin-right: calc(2 * var(--width-content-margin));
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+
+	/*------------------------------------- 
+	 スペシャルコンテンツのテンプレート
+	 インデックスモード・ワイドモードは通常ページと異なる。
+	-------------------------------------*/
+	body.special > * {
+		max-width: 1000px;
+		margin: auto;
+	}
+
+	[id=index].special #sharewithmain {
+		width: calc(100% + 20px);
+		margin: auto;
+	}
+
+	[id=wide].special #sharewithmain {
+		max-width: none;
+		margin: auto;
+	}
+}
+
+
+/*---------- スマホ用 ----------*/
+@media screen and (max-width: 767px) {
+	[id=index] #wrapper-3 {
+		overflow: hidden;
+		padding: 0 12px;
+		padding-top: 30px;
+		max-width: calc(40px + 500px);
+		max-width: calc(40px + var(--width-content-area));
+		margin: auto;
+	}
+
+	[id=index] #sharewithmain {
+		width: calc(100% + 12px);
+	}
+
+	/*-- インデックスモード カラム幅 --*/
+	/* 1～3カラムは1カラムに */
+	[id=index] [role="main"] > .multiColumn1 ,
+	[id=index] [role="main"] > .multiColumn2 ,
+	[id=index] [role="main"] > .multiColumn3 {
+		width: calc(100% - 12px);
+		width: calc(100% - 12px);
+		margin-left: 0px;
+		margin-right: 12px;
+		margin-right: calc(2 * var(--width-content-margin));
+	}
+
+	/* 4～5は2カラムに */
+	[id=index] [role="main"] > .multiColumn4 ,
+	[id=index] [role="main"] > .multiColumn5 {
+		width: calc((100% - 12px - 12px) / 2);
+		width: calc((100% - 12px - 2 * var(--width-content-margin)) / 2);
+		margin-left: 0px;
+		margin-right: 12px;
+		margin-right: calc(2 * var(--width-content-margin));
+	}
+
+
+}
+
+
+
+/*------------------------------------- 
+ 特殊設定カラムレイアウト インデックスモード専用
+-------------------------------------*/
+
+/*===== インデックスモード カラム幅 =====*/
+@media print, screen and (min-width: 768px) {
+	[id=index] [role="main"] > .lx_mcol2_ratio21.multiColumn1 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio21.multiColumn2 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio21.multiColumn3 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio21.multiColumn4 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio21.multiColumn5 {
+/*		width: calc((99.9999% - 20px) - ((99.9999% - 20px) - 20px * 2) / 3 - 20px); */
+		width: calc(99.9999% / 3 * 2 - 2 * var(--width-content-margin));
+		max-width: calc(var(--width-content-area) - (var(--width-content-area) - 4 * var(--width-content-margin)) / 3 - 2 * var(--width-content-margin));
+/*		margin-right: calc(2 * var(--width-content-margin)); */
+	}
+
+	[id=index] [role="main"] > .lx_mcol2_ratio31.multiColumn1 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio31.multiColumn2 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio31.multiColumn3 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio31.multiColumn4 ,
+	[id=index] [role="main"] > .lx_mcol2_ratio31.multiColumn5 {
+/*		width: calc((100% - 20px) - ((100% - 20px) - 20px * 3) / 4 - 20px); */
+		width: calc(100% / 4 * 3 - 2 * var(--width-content-margin));
+		max-width: calc(var(--width-content-area) - (var(--width-content-area) - 6 * var(--width-content-margin)) / 4 - 2 * var(--width-content-margin));
+/*		margin-right: calc(2 * var(--width-content-margin)); */
+	}
+}
+
+
+/*===== インデックスモード ツインカラムinカラム =====*/
+/* カラムが空でも非表示になりません。 */
+/*[id=index] [role="main"] >*/ .lx_mcol_twin_col {
+	--width-twin-col-margin: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	/*[id=index] [role="main"] >*/ .lx_mcol_twin_col {
+		--width-twin-col-margin: 6px;
+	}
+}
+
+[id=index] [role="main"] > .lx_mcol_twin_col > .column1 ,
+[id=index] [role="main"] > .lx_mcol_twin_col > .column2 {
+	display: inline-block;
+	width: calc((100% - 2 * var(--width-twin-col-margin)) / 2);
+	max-width: none;
+	margin-left: var(--width-twin-col-margin);
+	margin-right: var(--width-twin-col-margin);
+}
+
+[id=index] [role="main"] > .lx_mcol_twin_col > .column1 {
+	margin-left: 0;
+}
+
+[id=index] [role="main"] > .lx_mcol_twin_col > .column2 {
+	margin-right: 0;
+}
+
+/*===== インデックスモード ツインカラムinカラム × カラム分割比率 =====*/
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio28 > .column1 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio82 > .column2 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.2);
+}
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio28 > .column2 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio82 > .column1 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.8);
+}
+
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio37 > .column1 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio73 > .column2 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.3);
+}
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio37 > .column2 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio73 > .column1 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.7);
+}
+
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio46 > .column1 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio64 > .column2 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.4);
+}
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio46 > .column2 ,
+[id=index] [role="main"] > .lx_mcol_twin_col.lx_mcol2_ratio64 > .column1 {
+	width: calc((100% - 2 * var(--width-twin-col-margin)) * 0.6);
+}
+
+/* １カラムに対しては無効 */
+[id=index] [role="main"] > .multiColumn1.lx_mcol_twin_col > .column1 {
+	width: 100%;
+	margin-right: 0;
+}
+
+
+/*------------------------------------- 
+ 特殊カラム設定
+-------------------------------------*/
+/*===== 決算資料マージ =====*/
+/*-- IE対応 --*/
+@media all and (-ms-high-contrast:none) {
+	.merged_list > .column1 ,
+	.merged_list > .column2 ,
+	.merged_list > .column3 ,
+	.merged_list > .column4 ,
+	.merged_list > .column5 {
+		width: 100%;
+		max-width: calc(1120px);
+	}
+}
+
+/*===== アコーディオン =====*/
+.ux_accordion {
+}
+
+.ux_accordion > .column1 {
+	cursor: pointer;
+}
+
+.ux_accordion.multiColumn2 > .column1 ,
+.ux_accordion.multiColumn2 > .column2 ,
+.ux_accordion.multiColumn3 > .column1 ,
+.ux_accordion.multiColumn3 > .column2 ,
+.ux_accordion.multiColumn3 > .column3 ,
+.ux_accordion.multiColumn4 > .column1 ,
+.ux_accordion.multiColumn4 > .column2 ,
+.ux_accordion.multiColumn4 > .column3 ,
+.ux_accordion.multiColumn4 > .column4 ,
+.ux_accordion.multiColumn5 > .column1 ,
+.ux_accordion.multiColumn5 > .column2 ,
+.ux_accordion.multiColumn5 > .column3 ,
+.ux_accordion.multiColumn5 > .column4 ,
+.ux_accordion.multiColumn5 > .column5 {
+	max-width: none;
+	margin-bottom: 0;
+}
+
+@media print, screen and (min-width: 768px) {
+	[role="main"] > .ux_accordion {
+/*		width: 100%; */
+		width: calc(100% * var(--width-content-base));
+/*		max-width: calc(1000px + 40px); */
+		max-width: calc(var(--width-content-area) + 40px);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.ux_accordion.multiColumn2 > .column1 ,
+	.ux_accordion.multiColumn3 > .column1 ,
+	.ux_accordion.multiColumn4 > .column1 ,
+	.ux_accordion.multiColumn5 > .column1 {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.ux_accordion.multiColumn2 > .column2 ,
+	.ux_accordion.multiColumn3 > .column2 ,
+	.ux_accordion.multiColumn4 > .column2 ,
+	.ux_accordion.multiColumn5 > .column2 {
+		margin-left: 0;
+	}
+
+	.ux_accordion.multiColumn2 > .column2 {
+		width: 100%;
+	}
+
+	.ux_accordion.multiColumn3 > .column2 ,
+	.ux_accordion.multiColumn3 > .column3 {
+/*		width: calc((100% - 2 * 10px) / 2); */
+		width: calc((100% - 2 * var(--width-content-margin)) / 2);
+	}
+
+	.ux_accordion.multiColumn4 > .column2 ,
+	.ux_accordion.multiColumn4 > .column3 ,
+	.ux_accordion.multiColumn4 > .column4 {
+/*		width: calc((99.9999% - 4 * 10px) / 3); */
+		width: calc((100% - 4 * var(--width-content-margin)) / 3);
+	}
+
+	.ux_accordion.multiColumn5 > .column2 ,
+	.ux_accordion.multiColumn5 > .column3 ,
+	.ux_accordion.multiColumn5 > .column4 ,
+	.ux_accordion.multiColumn5 > .column5 {
+/*		width: calc((100% - 6 * 10px) / 4); */
+		width: calc((100% - 6 * var(--width-content-margin)) / 4);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	[role="main"] > .ux_accordion {
+/*		width: calc(100% - 12px); */
+		width: calc(100% * var(--width-content-base) - 12px);
+/*		max-width: calc(500px); */
+		max-width: calc(var(--width-content-area));
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.ux_accordion.multiColumn2 > .column1 ,
+	.ux_accordion.multiColumn2 > .column2 ,
+	.ux_accordion.multiColumn3 > .column1 ,
+	.ux_accordion.multiColumn3 > .column2 ,
+	.ux_accordion.multiColumn3 > .column3 ,
+	.ux_accordion.multiColumn4 > .column1 ,
+	.ux_accordion.multiColumn4 > .column2 ,
+	.ux_accordion.multiColumn4 > .column3 ,
+	.ux_accordion.multiColumn4 > .column4 ,
+	.ux_accordion.multiColumn5 > .column1 ,
+	.ux_accordion.multiColumn5 > .column2 ,
+	.ux_accordion.multiColumn5 > .column3 ,
+	.ux_accordion.multiColumn5 > .column4 ,
+	.ux_accordion.multiColumn5 > .column5 {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+
+/*===== 簡易版PC/SP表示切り替え =====*/
+/* 第１カラムがPC用、第２カラムがSP用 */
+@media print, screen and (min-width: 768px) {
+	#sharewithmain .lx_mcol2_flip.multiColumn2 > .column1 {
+		display: inline-block;
+/*		width: 100%; */
+		width: calc(100% * var(--width-content-base));
+/*		max-width: 1000px; */
+		max-width: var(--width-content-area);
+		margin-right: 0;
+	}
+
+	#sharewithmain .lx_mcol2_flip.multiColumn2 > .column2 {
+		display: none;
+	}
+
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column1 ,
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column2 {
+		display: inline-block;
+	}
+
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column1 {
+		width: calc((100% - 2 * 10px) * 0.6);
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.6);
+		max-width: calc((1000px - 2 * 10px) * 0.6);
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.6);
+		margin-right: 10px;
+		margin-right: var(--width-content-margin);
+	}
+
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column2 {
+		width: calc((100% - 2 * 10px) * 0.4);
+		width: calc((100% * var(--width-content-base) - 2 * var(--width-content-margin)) * 0.4);
+		max-width: calc((1000px - 2 * 10px) * 0.4);
+		max-width: calc((var(--width-content-area) - 2 * var(--width-content-margin)) * 0.4);
+		margin-left: 10px;
+		margin-left: var(--width-content-margin);
+	}
+
+	/*-- インデックスモード --*/
+	[id=index]:not(.col-subcol) [role="main"] > .lx_mcol2_flip {
+		width: calc(100% - 20px);
+		width: calc((100% - 20px) * var(--width-content-base));
+		margin-right: var(--width-content-margin);
+	}
+
+	/*-- フルワイドカラム（ウインドウサイズいっぱい表示）以外 --*/
+	#sharewithmain > .lx_mcol2_flip.multiColumn2.lx_mcol_full > .column1 ,
+	#sharewithmain > .lx_mcol2_flip.multiColumn2.lx_mcol_full > .column2 {
+		max-width: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#sharewithmain .lx_mcol2_flip.multiColumn2 > .column1 {
+		display: none;
+	}
+
+	#sharewithmain .lx_mcol2_flip.multiColumn2 > .column2 {
+		display: inline-block;
+	}
+
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column1 ,
+	#sharewithmain .mgnlEditor ~ .lx_mcol2_flip.multiColumn2 > .column2 {
+		display: inline-block;
+	}
+}
+
+
+/*===== カラム内中央寄せ（主にページ内リンク用） =====*/
+.lx_col_align_center > div {
+	text-align: center;
+}
+
+@media print, screen and (min-width: 768px) {
+	.lx_col_pc_align_center > div {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.lx_col_sp_align_center > div {
+		text-align: center;
+	}
+}
+
+
+
+/*------------------------------------- 
+ その他の特殊設定
+-------------------------------------*/
+/*===== 固定幅横スクロール テーブル縦横 =====*/
+@media screen and (max-width: 767px) {
+	/* テーブル縦横 横スクロール設定 */
+	.layout_sp_scrolltable .vertical-table ,
+	.layout_sp_scrolltable .ircalendar ,
+	.lx_table_sp_swipable .vertical-table ,
+	.lx_table_sp_swipable .ircalendar ,
+	.ux_table_sp_swipable .vertical-table ,
+	.ux_table_sp_swipable .ircalendar {
+		overflow-x: scroll;
+		padding-bottom: 1px;
+	}
+
+	.layout_sp_scrolltable .vertical-table > div ,
+	.layout_sp_scrolltable .ircalendar > div ,
+	.lx_table_sp_swipable .vertical-table > div ,
+	.lx_table_sp_swipable .ircalendar > div ,
+	.ux_table_sp_swipable .vertical-table > div ,
+	.ux_table_sp_swipable .ircalendar > div {
+		width: 1000px;
+	}
+
+	.layout_sp_scrolltable table.icell ,
+	.lx_table_sp_swipable table.icell ,
+	.ux_table_sp_swipable table.icell {
+		min-width: 1000px;
+	}
+
+}
+
+
+
+
+/* -- 印刷用 -- */
+@media print {
+	/* 改ページ抑止 */
+/*
+	.multiColumn1 > .column1 {
+		display: block;
+	}
+	body[id=wide] [role="main"] > .multiColumn1 > .column1 {
+		display: inline-block;
+	}
+*/
+
+	/* サイドナビ無し */
+/*
+	#nav-box ,
+	#promos2 {
+		display: none;
+	}
+	#wrapper-3 {
+		width: 100% !important;
+		float: none !important;
+		clear: both !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+*/
+
+}
