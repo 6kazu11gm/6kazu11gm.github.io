@@ -14030,13 +14030,12 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 	content: none !important;
 	width: 0 !important;
 }
-  
-.dark .js-mask, .scheme-dark .l-mainvisual .js-mask {
-	background: #000;
-	/* background-color: be1d2c; */
-}
-  
 
+/* 背景黒スライドを削除 */
+/* .dark .js-mask, .scheme-dark .l-mainvisual .js-mask {
+	background: #000;
+	background-color: be1d2c;
+} */
 
 /*=== ニュースロゴ一覧 ===*/
 .lx_multi3_bis_logo .basic-list2:not(.thumnail) .item .c_icon > span[data-category-group="renkei"]::before ,
@@ -14356,7 +14355,7 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 
 	.lx_service_list .teaser:not(.no-img).style1 h2 + a ,
 	.lx_service_list .external-teaser:not(.no-img).style1 h2 + a {
-		height: 284px;
+		height: 100%;
 		border: solid 1px #c0c0c0;
 		display: flex;
 		align-items: center;
@@ -14374,8 +14373,8 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 
 	.lx_service_list .teaser:not(.no-img).style1:hover h2 + a img ,
 	.lx_service_list .external-teaser:not(.no-img).style1:hover h2 + a img {
-		opacity: 0;
-		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		/* opacity: 0;
+		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); */
 	}
 
 	.lx_service_list .teaser:not(.no-img).style1:hover h2 a > span ,
@@ -14472,11 +14471,10 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 		left: 50%;
 		margin: 0;
 		width: 100%;
-		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 		max-width: 314px;
-		transform: translate(-50%, -50%) scale(0.95);
-		
+		transform: translate(-50%, -50%) scale(0.95);		
 		opacity: 0;
+		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	}
 	
 	.lx_service_list .teaser:not(.no-img).style1:hover + .text-section,
@@ -15213,7 +15211,7 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 	.lx_group_list .teaser:not(.no-img).style1 h2 + a img ,
 	.lx_group_list .external-teaser:not(.no-img).style1 h2 + a img {
 		width: 100%;
-		max-width: 280px;
+		max-width: 100%;
 		position: relative;
 		z-index: 10;
 		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
@@ -15231,8 +15229,8 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 
 	.lx_group_list .teaser:not(.no-img).style1:hover h2 + a img ,
 	.lx_group_list .external-teaser:not(.no-img).style1:hover h2 + a img {
-		opacity: 0;
-		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		/* opacity: 0;
+		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); */
 	}
 }
 
@@ -15344,10 +15342,9 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 		left: 50%;
 		margin: 0;
 		width: 100%;
-		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 		transform: translate(-50%,-50%) scale(0.95);
-		
 		opacity: 0;
+		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	}
 
 	.lx_group_list.lx_group_list_inquiry .teaser:not(.no-img).style1 + .text-section img ,
@@ -15384,8 +15381,8 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 
 /*==== 会社情報 ====*/
 .lx_style_company {
-	background-color: #000;
-	color: #fff;
+	background-color: #fff;
+	color: #000;
 }
 
 .mgnlEditorBar ~ .lx_style_company .column1 {

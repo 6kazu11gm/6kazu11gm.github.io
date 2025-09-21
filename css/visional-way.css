@@ -286,22 +286,23 @@ screen and (min-width: 768px) {
 }
 
 
-/*=== 背景黒 ===*/
-.lx_style_value_bg_black {
+/* .lx_style_value_bg_black {
     background-color: #000;
     color: #fff;
-}
+} */
 
 .lx_style_value_bg_black>*>.reuse-main-area {
     position: relative;
 }
+
+
 
 @media screen and (min-width: 769px) {
     .lx_style_value_bg_black {
         padding-bottom: 160px;
     }
 
-    .lx_style_value_bg_black>*>.reuse-main-area::before,
+    /* .lx_style_value_bg_black>*>.reuse-main-area::before,
     .lx_style_value_bg_black>*>.reuse-main-area::after {
         content: "";
         position: absolute;
@@ -312,17 +313,17 @@ screen and (min-width: 768px) {
         height: 100%;
         background: #1c1c1c;
         z-index: 1;
-    }
+    } */
 
-    .lx_style_value_bg_black>*>.reuse-main-area::after {
+    /* .lx_style_value_bg_black>*>.reuse-main-area::after {
         left: calc(50% + 10px);
-    }
+    } */
 }
 
 @media screen and (max-width: 767px) {
-    .lx_style_value_bg_black {
+    /* .lx_style_value_bg_black {
         padding-bottom: calc(21.3333vw - 13.3333vw);
-    }
+    } */
 }
 
 /*=== JS スクロールエフェクト ===*/
