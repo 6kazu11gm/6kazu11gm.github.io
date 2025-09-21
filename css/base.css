@@ -460,8 +460,9 @@ pre,
 form, fieldset, 
 p, blockquote,
 img {
-	margin: 0;
+	margin: 0px;
 	padding: 0;
+	/* padding-top: 5px; */
 	border: none;
 	vertical-align: middle;
 }

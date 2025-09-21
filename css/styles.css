@@ -14106,7 +14106,7 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 
 .lx_multi3_bis_logo .basic-list2:not(.thumnail) .item .c_icon > span[data-category-group="renkei"]::before ,
 .lx_multi3_bis_logo .basic-list2:not(.thumnail) .item .c_icon span[category-level="2"].visional_ja {
-	background-image: url("../../../../../../resources/sw_img/icon/news_logo/icon_logo_visional.svg");
+	background-image: url("../images/VC_road.jpg");
 	background-size: 97px auto;
 }
 
@@ -14367,7 +14367,6 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 	.lx_service_list .teaser:not(.no-img).style1 h2 + a img ,
 	.lx_service_list .external-teaser:not(.no-img).style1 h2 + a img {
 		width: 100%;
-		max-width: 314px;
 		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 	}
 
@@ -14406,7 +14405,6 @@ body[data-current-level="3"] #promos3 .lx_smplae_multi3_promos3_pagelist01 {
 	}
 	.lx_service_list .teaser:not(.no-img).style1 h2 + a img ,
 	.lx_service_list .external-teaser:not(.no-img).style1 h2 + a img {
-		width: 73%;
 		max-width: none;
 		position: absolute;
 		top: 50%;
