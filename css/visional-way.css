@@ -1,0 +1,839 @@
+@charset "utf-8";
+
+
+.lx_style_groupmission>.column1 {
+    margin-bottom: 135px;
+}
+
+.lx_style_groupmission .text-section {
+    font-size: 24px;
+    text-align: justify;
+    letter-spacing: 1.2px;
+}
+
+.en~* .lx_style_groupmission .text-section {
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+
+.lx_style_groupmission .text-section strong {}
+
+.lx_style_groupmission .text-section p+p {
+    margin-bottom: -12px;
+    margin-top: 44px;
+}
+
+.lx_style_groupmission .text-section p em {
+    font-size: 48px;
+    font-style: normal;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    letter-spacing: 4.8px;
+}
+
+.en~* .lx_style_groupmission .text-section p em {
+    letter-spacing: 1.2px;
+}
+
+@media print,
+screen and (min-width: 768px) {
+    .lx_style_groupmission .text-section {
+        max-width: 804px;
+        padding-left: 62px;
+        padding-right: 62px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .lx_style_groupmission>.column1 {
+        margin-bottom: calc(20vw - 20px);
+    }
+
+    .lx_style_groupmission .text-section {
+        font-size: 4.6666vw;
+        letter-spacing: 0;
+    }
+
+    .lx_style_groupmission .text-section p em {
+        font-size: 7.4666vw;
+        letter-spacing: 0;
+    }
+
+    .lx_style_groupmission .text-section p br {
+        display: none;
+    }
+}
+
+.lx_style_executives .basic-list2.thumnail .tabItems>li {
+    margin-bottom: 77px;
+}
+
+.lx_style_executives .basic-list2.thumnail .item {
+    position: relative;
+    padding-bottom: 0;
+}
+
+.lx_style_executives .basic-list2.thumnail .item a::before {
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    z-index: 2;
+}
+
+.lx_style_executives .basic-list2.thumnail .item .date {
+    display: none;
+}
+
+.lx_style_executives .basic-list2.thumnail .item .n_img {
+    border: none;
+}
+
+.lx_style_executives .basic-list2.thumnail .item .det_tx {
+    display: none;
+}
+
+
+@media print,
+screen and (min-width: 768px) {
+
+    .lx_style_executives .basic-list2.thumnail .item::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .n_img {
+        width: 128px;
+        float: left;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .n_img img {
+        margin-top: 0;
+        margin-bottom: 0;
+        position: static;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .news_tx {
+        width: calc(100% - 140px);
+        float: right;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .lx_style_executives .basic-list2 .explanation {
+        width: calc(100% - 140px);
+        float: right;
+        margin-top: 13px;
+        line-height: 1.5;
+    }
+
+    .lx_style_executives .basic-list2 .explanation li {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+
+    .lx_style_executives .basic-list2.thumnail .item .n_img {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .news_tx {
+        width: 100%;
+        float: none;
+    }
+
+    .lx_style_executives .basic-list2 .explanation {
+        width: 100%;
+        float: none;
+        margin-top: 2.8vw;
+        line-height: 1.7;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .lx_style_executives .basic-list2.thumnail .tabItems>li {
+        margin-bottom: 8.6667vw;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item {
+        padding-bottom: 0;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .n_img {
+        width: 24.5333vw;
+        margin-left: 0;
+        padding-top: 75%;
+        margin-bottom: 4vw;
+    }
+
+    .lx_style_executives .basic-list2.thumnail .item .news_tx {
+        font-weight: bold;
+        font-size: 4.6667vw;
+
+        margin-bottom: 3.4vw;
+    }
+
+    .lx_style_executives .basic-list2 .explanation {
+        margin-top: 1.3333vw;
+    }
+
+    .lx_style_executives .basic-list2 .explanation li {
+        font-size: 2.8vw;
+    }
+
+    .lx_style_executives .basic-list2 .explanation::after {
+        content: '詳しい経歴';
+        font-size: 2.8vw;
+        display: inline-block;
+        margin-top: 2.9333vw;
+        padding-left: 3.7333vw;
+        background: url("../../resources/sw_img/icon/icon_arr01.svg") left center no-repeat;
+        background-size: 1.8667vw 2.6667vw;
+    }
+
+    #header.en~* .lx_style_executives .basic-list2 .explanation::after {
+        content: 'Read more';
+    }
+}
+
+
+
+.lx_style_value .title2.style2 {
+    margin-bottom: 0;
+}
+
+.lx_style_value .text-section {
+    margin-bottom: 0;
+}
+
+.lx_style_value .text-section p+p {
+    margin-top: 16px;
+}
+
+.lx_style_value .text-section p em {
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: .1em;
+    line-height: 1.5;
+    /* display: inline-block; */
+}
+
+.en~* .lx_style_value .text-section p em {
+    letter-spacing: .025em;
+}
+
+.lx_style_value .text-section>div>p:first-child strong {
+    line-height: 1;
+    font-family: "Roboto", sans-serif;
+}
+
+@media print,
+screen and (min-width: 768px) {
+    .lx_style_value+.lx_style_value {
+        margin-top: 105px;
+    }
+
+    .lx_style_value>.column1,
+    .lx_style_value>.column2 {
+        margin-bottom: 0;
+    }
+
+    .lx_style_value .text-section p:nth-child(2) {
+        margin-top: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .lx_style_value .text-section p {}
+
+    .lx_style_value .text-section p+p {
+        margin-top: 4.5333vw;
+    }
+
+    .lx_style_value .text-section p em {
+        letter-spacing: .05em;
+        font-size: 7.4667vw;
+        line-height: 1.5;
+    }
+
+
+    .lx_style_value .text-section p br {
+        display: none;
+    }
+
+    .lx_style_value .text-section p em br {
+        display: inline;
+    }
+
+    .lx_style_value .text-section>div>p:first-child strong {
+        font-size: 4.2667vw;
+    }
+
+    .lx_style_value .text-section p em {}
+}
+
+
+/*=== 背景黒 ===*/
+.lx_style_value_bg_black {
+    background-color: #000;
+    color: #fff;
+}
+
+.lx_style_value_bg_black>*>.reuse-main-area {
+    position: relative;
+}
+
+@media screen and (min-width: 769px) {
+    .lx_style_value_bg_black {
+        padding-bottom: 160px;
+    }
+
+    .lx_style_value_bg_black>*>.reuse-main-area::before,
+    .lx_style_value_bg_black>*>.reuse-main-area::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #1c1c1c;
+        z-index: 1;
+    }
+
+    .lx_style_value_bg_black>*>.reuse-main-area::after {
+        left: calc(50% + 10px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .lx_style_value_bg_black {
+        padding-bottom: calc(21.3333vw - 13.3333vw);
+    }
+}
+
+/*=== JS スクロールエフェクト ===*/
+#sharewithmain>.child-mask>*>*>.multiColumn1,
+#sharewithmain>.child-mask>*>*>.multiColumn2,
+#sharewithmain>.child-mask>*>*>.multiColumn3,
+#sharewithmain>.child-mask>*>*>.multiColumn4,
+#sharewithmain>.child-mask>*>*>.multiColumn5 {
+    position: relative;
+}
+
+/*
+#sharewithmain .js-mask {
+	transition: width 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+*/
+@media screen and (min-width: 769px) {
+
+    #sharewithmain>.child-mask>*>*>.multiColumn1.fast .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn2.fast .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn3.fast .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn4.fast .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn5.fast .js-mask {
+        transition: width 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    #sharewithmain>.child-mask>*>*>.multiColumn1.delay .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn2.delay .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn3.delay .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn4.delay .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn5.delay .js-mask {
+        transition-delay: .6s;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    #sharewithmain>.child-mask>*>*>.multiColumn1.delay-s .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn2.delay-s .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn3.delay-s .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn4.delay-s .js-mask,
+    #sharewithmain>.child-mask>*>*>.multiColumn5.delay-s .js-mask {
+        transition-delay: .2s;
+    }
+}
+
+#sharewithmain>.child-mask>*>*>.multiColumn1.app-show>.js-mask,
+#sharewithmain>.child-mask>*>*>.multiColumn2.app-show>.js-mask,
+#sharewithmain>.child-mask>*>*>.multiColumn3.app-show>.js-mask,
+#sharewithmain>.child-mask>*>*>.multiColumn4.app-show>.js-mask,
+#sharewithmain>.child-mask>*>*>.multiColumn5.app-show>.js-mask {
+    width: 0 !important;
+}
+
+
+/* ============ モーダル ============ */
+/* ===================================== */
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox,
+#cboxOverlay,
+#cboxWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+#cboxWrapper {
+    max-width: none;
+}
+
+#cboxOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#cboxMiddleLeft,
+#cboxBottomLeft {
+    clear: left;
+}
+
+#cboxContent {
+    position: relative;
+}
+
+#cboxLoadedContent {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#cboxTitle {
+    margin: 0;
+}
+
+#cboxLoadingOverlay,
+#cboxLoadingGraphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow {
+    cursor: pointer;
+}
+
+.cboxPhoto {
+    float: left;
+    margin: auto;
+    border: 0;
+    display: block;
+    max-width: none;
+    -ms-interpolation-mode: bicubic;
+}
+
+.cboxIframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#colorbox,
+#cboxContent,
+#cboxLoadedContent {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay {
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 11001;
+}
+
+#colorbox {
+    outline: 0;
+    z-index: 110002;
+}
+
+#cboxTopLeft,
+#cboxTopRight,
+#cboxBottomLeft,
+#cboxBottomRight,
+#cboxMiddleLeft,
+#cboxMiddleRight,
+#cboxTopCenter,
+#cboxBottomCenter {
+    display: none;
+}
+
+#cboxContent {
+    overflow: hidden;
+}
+
+.cboxIframe {
+    background: #fff;
+    border: 2px #060 solid;
+}
+
+#cboxError {
+    padding: 50px;
+    border: 1px solid #ccc;
+    border: 2px #f00 solid;
+}
+
+#cboxTitle {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #949494;
+}
+
+#cboxCurrent {
+    display: none !important;
+}
+
+#cboxLoadingOverlay {}
+
+#cboxLoadingGraphic {}
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    width: auto;
+    background: none;
+}
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+    outline: 0;
+}
+
+#cboxSlideshow {
+    position: absolute;
+    bottom: 4px;
+    right: 30px;
+    color: #0092ef;
+}
+
+
+#cboxPrevious,
+#cboxNext {
+    position: absolute;
+    top: calc(50% - 25px);
+    text-indent: -9999px;
+    z-index: 110003;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+#cboxPrevious::before,
+#cboxNext::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -6.5px;
+    margin-left: -4.5px;
+    display: block;
+    width: 9px;
+    height: 13px;
+    background: url("../../resources/sw_img/icon/icon_arr01.svg") center center no-repeat;
+    background-size: contain;
+}
+
+#cboxPrevious {
+    left: 0;
+}
+
+#cboxPrevious::before {
+    transform: rotate(180deg)
+}
+
+
+#cboxPrevious:hover {
+    background-position: -75px -25px;
+}
+
+#cboxNext {
+    right: 0;
+}
+
+
+#cboxNext:hover {
+    background-position: -50px -25px;
+}
+
+
+.modaal-controls-prev,
+.modaal-controls-next {
+    position: absolute;
+    top: 50%;
+    right: -90px;
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    border-radius: 50%;
+    background-color: #fff;
+    outline: none;
+    border: none;
+}
+
+
+
+
+
+
+
+#cboxClose {
+    position: absolute;
+    right: 110px;
+    top: 10px;
+    width: 36px;
+    height: 22px;
+    text-indent: -9999px;
+    outline: none;
+    transition: none;
+}
+
+#cboxClose:after,
+#cboxClose:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 22px;
+    border-radius: 2px;
+    background: #000;
+    transform: skewX(-57deg);
+    transform-origin: right bottom;
+}
+
+#cboxClose:after {
+    left: auto;
+    right: 0;
+    transform: skewX(57deg);
+    transform-origin: left bottom;
+}
+
+
+
+#cboxClose:hover {}
+
+
+@media screen and (max-width: 767px) {
+    #colorbox {
+        overflow: visible !important;
+    }
+
+    #colorbox,
+    #cboxWrapper,
+    #cboxContent,
+    #cboxLoadedContent {
+        width: 100% !important;
+    }
+
+    #colorbox,
+    #cboxWrapper,
+    #cboxMiddleLeft,
+    #cboxContent,
+    #cboxLoadedContent {
+        height: auto !important;
+    }
+
+    #cboxClose {
+        right: 9.3333vw;
+        top: 9.3333vw;
+        width: 6.034vw;
+        height: 6.034vw;
+        transform: translate(50%, -50%);
+    }
+
+    #cboxClose:after,
+    #cboxClose:before {
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        border-radius: 0;
+        transform: rotate(135deg);
+        transform-origin: center center;
+    }
+
+    #cboxClose:after {
+        transform: rotate(45deg);
+    }
+
+}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+}
+
+
+
+@media print,
+screen and (min-width: 768px) {
+
+    #cboxContent {
+        padding: 0 90px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    #cboxPrevious,
+    #cboxNext {
+        display: none !important;
+    }
+}
+
+/* ===================================== */
+#cboxClose {
+    opacity: 0;
+}
+
+#cboxWrapper.ready #cboxClose {
+    opacity: 1;
+    transition: .5s;
+}
+
+
+/**/
+
+
+
+.lx_modai-win {
+    max-width: 677px;
+    padding: 120px 40px;
+    background-color: #fff;
+}
+
+@media print,
+screen and (min-width: 768px) {
+    .modaal-inner-wrapper {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    .lx_modai-win {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .lx_modai-win .modal-left {
+        width: 45%;
+        padding-right: 20px;
+    }
+
+    .lx_modai-win .modal-right {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .lx_modai-win {
+        padding: 14vw 6.6667vw;
+    }
+}
+
+
+.lx_modai-win .news_tx {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.lx_modai-win .explanation {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.lx_modai-win .explanation .text2 {
+    white-space: pre-line;
+}
+
+.lx_modai-win .det_tx {
+    color: #808080;
+    font-size: 12px;
+    line-height: 2;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .lx_modai-win .news_tx {
+        font-size: 4.6667vw;
+        margin-bottom: 1.333vw;
+    }
+
+    .lx_modai-win .explanation,
+    .lx_modai-win .det_tx {
+        font-size: 2.8vw;
+        line-height: 2.2;
+    }
+
+    .lx_modai-win .explanation {
+        margin-bottom: 5.3333vw;
+        line-height: 1.72;
+        font-weight: bold;
+    }
+}
