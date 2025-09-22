@@ -61,7 +61,7 @@
   right: 0;
   width: 100%;
   height: calc(100% + 101px);
-  background: #ff0000;
+  background: #be1d2c;
   z-index: 15000;
   overflow: hidden;
 }
@@ -182,9 +182,9 @@
   }
 }
 
-.lx_top_contact {
+/* .lx_top_contact {
   background-color: #eee;
-}
+} */
 
 .lx_top_contact > .column1 {
   padding-top: 80px;
